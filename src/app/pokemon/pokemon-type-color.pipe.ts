@@ -47,7 +47,6 @@ export class PokemonTypeColorPipe implements PipeTransform
         color = 'grey';
         break;
     }
-  
     return 'chip ' + color; // Classe qui vient de materialize (chip petit rond de couleur) avec la couleur du type 
   }
 }
