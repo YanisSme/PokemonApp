@@ -1,0 +1,43 @@
+<div class="container">
+    <div class ="row">
+        <div *ngFor="let pokemon of pokemonList" class="col m4 s6"> <!-- Syntaxe *ngFor : 1. Je déclare une variable pour parcourir le tableau ici pokemon mais pourrait être i  2. Je met le of  3. Je parcours ensuite obligatoirement un tableau qui vient de la classe de mon component -->
+            <div (click)="goToPokemon(pokemon)" class="card horizontal" appBorderCard>                
+                <div class="card-image">
+                    <img [src]="pokemon.picture">
+                </div>
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <p>{{pokemon.name}}</p>
+                        <p><small>{{pokemon.created | date:"dd/MM/yyyy" }}</small></p>
+                        <!-- *ngFor car un pokémon peut avoir plusieurs type et on utilise notre propre pipe -->
+                        <span *ngFor="let type of pokemon.types" class="{{type | pokemonTypeColor}}">{{type}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--
+    PIPES UTILISABLES DANS TOUS LES TEMPLATES
+    L'interpolation permet d'afficher des données dans le template 
+    mais parfois les données qu'on récupère ne peuvent pas être affichées 
+    directement donc on utilise des pipes.
+-->
+
+<!-- ANCIEN CODE MAIS INTERESSANT -->
+
+<!--Je rajoute un champ input de type number
+    Ensuite je déclare une variable DANS le template qui se nomme #input    
+    Je rajt un événement keyup.enter qui à chaque fois que l'utilisateur tape ENTER dans mon champ je vais pousser la valeur dans l'interpolation du <p> en dessous
+<input 
+    #input 
+    (keyup.enter)="selectPokemon(input.value)" 
+    type="number" >
+<!-- *ngIf permet d'afficher qqch dans le template selon une condition (DU COMPONENT) ici si le pokemon est Selected on affiche le p d'en dessous sinon non 
+<p *ngIf="pokemonSelected">
+    Vous avez selectionné le pokemon : {{pokemonSelected?.name}}
+</p> <!-- Affiche le pokemon sélectionné | le ? si pokemonSelected pas définit n'affiche rien au lieu d'une erreur 
+<p *ngIf="!pokemonSelected">
+    Aucun pokémon n'a été trouvé.
+</p> -->
