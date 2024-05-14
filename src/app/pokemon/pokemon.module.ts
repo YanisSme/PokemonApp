@@ -6,6 +6,8 @@ import { ListPokemonComponent } from './list-pokemon/list-pokemon.component';
 import { DetailPokemonComponent } from './detail-pokemon/detail-pokemon.component';
 import { RouterModule, Routes } from '@angular/router';
 import { PokemonService } from './pokemon.service';
+import { FormsModule } from '@angular/forms';
+import { PokemonFormComponent } from './pokemon-form/pokemon-form.component';
 
 
 const pokemonRoutes: Routes = [
@@ -24,10 +26,12 @@ const pokemonRoutes: Routes = [
     BorderCardDirective,
     PokemonTypeColorPipe,
     ListPokemonComponent,
-    DetailPokemonComponent
+    DetailPokemonComponent,
+    PokemonFormComponent
   ],
   imports: [
     CommonModule,
+    FormsModule,
     RouterModule.forChild(pokemonRoutes) // concerne les routes de pokemon à revoir cette ligne 
   ],
   providers: [

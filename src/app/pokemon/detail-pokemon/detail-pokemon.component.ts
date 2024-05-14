@@ -30,3 +30,14 @@ export class DetailPokemonComponent
     this.router.navigate(['/pokemons']); // permet de naviguer dans l'url que je veux 
   }
 }
+
+/*
+  Pour faire des formulaires 2 méthodes : 
+  FormsModule : Développe une partie importante du formulaire dans le template directement | + adapté pour les petits formulaires/débutants
+  ReactiveFormsModule : Développement du formulaire côté composant directement | l'autre truc dcp 
+  Les formulaires proviennent de la même lib @angular/forms
+  2 directives de FormsModule (+ d'infos sur la doc Angular)
+  ngForm : Active sur toutes les balises <form>, crée une instance d'un objet FormGroup |
+  Sert à savoir si le formulaire que remplis l'uitlisateur est ok ou pas, on peut également avec une notification quand le formulaire est soumis...
+  ngModel : Appliquée sur chacun des champs du formulaire, crée une instance d'un objet FormControl pour chaque champ de notre formulaire comme <input> ou <select>...
+*/

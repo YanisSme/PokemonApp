@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component'; 
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { PokemonModule } from './pokemon/pokemon.module';
-import { Pokemon } from './pokemon/pokemon';
+import { FormsModule } from '@angular/forms';
 
 /*
   Un module Angular est une manière de regrouper des composants, des directives, des pipes et des services qui sont associés. 
@@ -18,8 +18,9 @@ import { Pokemon } from './pokemon/pokemon';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     PokemonModule,
-    AppRoutingModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
