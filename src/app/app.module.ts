@@ -26,3 +26,4 @@ import { Pokemon } from './pokemon/pokemon';
 })
 
 export class AppModule { }
+
