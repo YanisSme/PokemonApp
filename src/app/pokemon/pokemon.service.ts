@@ -7,6 +7,7 @@ import { POKEMONS } from './mock-pokemon-list';
   Masquer à nos composants comment on recup les données et le fonctionnement de certaines méthodes
   Initialisation des services : private nom_instance nom_service (à faire dans les .ts)
 */
+
 @Injectable( // Le Injectable pour les services   
   // providedIn: 'root' // Garantit qu'on a la même instance de Pokemon partout dans le projet ici on l'injecte uniquement dans le module pokemon / si pour toute l'app on peut mettre provideIn: 'root'
 )
